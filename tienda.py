@@ -40,7 +40,8 @@ def mostrar_inventario(inventario):
     if not inventario:
         print("El inventario está vacío.")
     else:
-        pass
+        for producto in inventario:
+            print(producto)
 
 
 def calcular_valor_total(inventario):
