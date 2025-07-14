@@ -1,10 +1,13 @@
 class Producto:
     def __init__(self, codigo, nombre, precio):
+
         """
         COMPLETAR 1:
         Asigna los parámetros a los atributos
         """
-        pass
+        self.codigo = codigo
+        self.nombre = nombre
+        self.precio = precio
 
     def __str__(self):
         """
@@ -13,7 +16,7 @@ class Producto:
         Asegúrate de que el precio se muestre con 2 decimales.
         Ejemplo de formato: "[PROD001] Teclado Mecánico - Precio: 75.50 €
         """
-        pass
+        return f"[{self.codigo}] {self.nombre} - Precio: {self.precio:.2f} €"
 
 
 def buscar_producto(inventario, codigo_buscar):
@@ -22,7 +25,10 @@ def buscar_producto(inventario, codigo_buscar):
     Busca en 'inventario' un producto cuyo código coincida con 'codigo_buscar'.
     Si lo encuentra, devuelve dicho objeto; si no, devuelve None.
     """
-    pass
+    for producto in inventario:
+        if producto.codigo == codigo_buscar:
+            return producto
+    return None
 
 
 def mostrar_inventario(inventario):
